@@ -1,0 +1,34 @@
+@startuml
+title Airplane Reservation System - Activity Diagram
+start
+:Customer logs in;
+:Enter source, destination and date;
+:Search flights;
+:Display flight schedules;
+if (Seats available?) then (yes)
+  :Select flight and seats;
+  :Make payment;
+  if (Payment successful?) then (yes)
+    :Confirm reservation;
+    :Generate e-ticket;
+  else (no)
+    :Release seats;
+    :Show payment failure;
+    stop
+  endif
+else (no)
+  :Show no seats message;
+  stop
+endif
+if (Cancel reservation?) then (yes)
+  :Cancel reservation;
+  :Refund amount;
+else (no)
+endif
+if (Admin cancels scheduled flight?) then (yes)
+  :Cancel flight schedule;
+  :Notify all stakeholders;
+else (no)
+endif
+stop
+@enduml

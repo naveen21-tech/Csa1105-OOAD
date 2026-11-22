@@ -1,0 +1,92 @@
+@startuml
+title Airplane Reservation System - Class Diagram
+skinparam classAttributeIconSize 0
+class User {
+  - userId : int
+  - name : String
+  - email : String
+  - password : String
+  + login()
+  + logout()
+}
+class Customer {
+  - phone : String
+  - address : String
+  + searchFlights()
+  + reserveSeats()
+  + cancelReservation()
+}
+class Admin {
+  - adminRole : String
+  + addAircraft()
+  + addFlight()
+  + addSchedule()
+  + cancelFlight()
+}
+class Aircraft {
+  - aircraftId : int
+  - model : String
+  - totalSeats : int
+  + getDetails()
+}
+class Airport {
+  - airportCode : String
+  - name : String
+  - city : String
+  + getDetails()
+}
+class Flight {
+  - flightNo : String
+  - airline : String
+  + getDetails()
+}
+class FlightSchedule {
+  - scheduleId : int
+  - flightDate : Date
+  - departureTime : Date
+  - arrivalTime : Date
+  - status : String
+  + cancel()
+  + getSchedule()
+}
+class Seat {
+  - seatNo : String
+  - seatClass : String
+  - isAvailable : boolean
+  + reserve()
+  + release()
+}
+class Reservation {
+  - reservationId : int
+  - reservationDate : Date
+  - status : String
+  - totalFare : double
+  + reserve()
+  + cancel()
+}
+class Payment {
+  - paymentId : int
+  - amount : double
+  - mode : String
+  - status : String
+  + process()
+  + refund()
+}
+class Notification {
+  - notificationId : int
+  - message : String
+  - sentDate : Date
+  + send()
+}
+User <|-- Customer
+User <|-- Admin
+Aircraft "1" -- "*" Flight : operates
+Flight "1" *-- "*" FlightSchedule : has
+Flight "*" -- "1" Airport : departs from
+Customer "1" -- "*" Reservation : makes
+Reservation "*" -- "1" FlightSchedule : for
+Reservation "1" -- "1..*" Seat : reserves
+Reservation "1" -- "1" Payment : paid by
+FlightSchedule "1" -- "*" Notification : triggers
+Admin "1" -- "*" Flight : manages
+@enduml

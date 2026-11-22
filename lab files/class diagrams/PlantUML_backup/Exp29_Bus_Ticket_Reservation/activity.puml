@@ -1,0 +1,30 @@
+@startuml
+title Bus Ticket Reservation System - Activity Diagram
+start
+:Customer creates login;
+:System stores customer details;
+:Enter source, destination, date and time;
+:View bus and seat availability;
+if (Seats available?) then (yes)
+  :Select seats;
+  :Make payment;
+  if (Payment successful?) then (yes)
+    :Book ticket;
+    :Generate ticket;
+  else (no)
+    :Show payment failure;
+    stop
+  endif
+else (no)
+  :Show seats not available;
+  stop
+endif
+:View bus status;
+if (Cancel ticket?) then (yes)
+  :Check time remaining before departure;
+  :Calculate refund based on time remaining;
+  :Cancel ticket and refund amount;
+else (no)
+endif
+stop
+@enduml

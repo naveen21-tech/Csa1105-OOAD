@@ -1,0 +1,57 @@
+@startuml
+title Land Registration System - Class Diagram
+skinparam classAttributeIconSize 0
+class Registrar {
+  - registrarId : int
+  - name : String
+  - password : String
+  + login()
+  + registerLand()
+  + maintainRecords()
+}
+class Citizen {
+  - citizenId : int
+  - name : String
+  - address : String
+  - phone : String
+  - idProofNo : String
+  + viewLands()
+  + payTax()
+}
+class Land {
+  - landId : int
+  - surveyNo : String
+  - area : double
+  - location : String
+  - marketValue : double
+  + getDetails()
+  + updateOwner()
+}
+class LandOwner {
+  - ownerId : int
+  - ownershipDate : Date
+  - sharePercentage : double
+  + updateOwner()
+}
+class Registration {
+  - registrationId : int
+  - registrationDate : Date
+  - transactionAmount : double
+  + register()
+  + updateRecords()
+}
+class Tax {
+  - taxId : int
+  - taxAmount : double
+  - paidDate : Date
+  - status : String
+  + calculateTax()
+  + updateTax()
+}
+Citizen "1" -- "*" LandOwner : holds
+Land "1" -- "1..*" LandOwner : owned by
+Registration "*" -- "1" Land : registers
+Registration "*" -- "1" Citizen : buyer
+Registration "1" -- "1" Tax : taxed by
+Registrar "1" -- "*" Registration : performs
+@enduml

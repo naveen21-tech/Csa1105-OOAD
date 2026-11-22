@@ -1,0 +1,32 @@
+@startuml
+title Jewel Loan Management System - Activity Diagram
+start
+:Admin adds new customer;
+:Customer logs in;
+:View account details;
+:Apply for new loan;
+:Submit ornaments;
+:Admin verifies purity of ornaments;
+if (Ornaments valid?) then (yes)
+  :Verify payback potential of customer;
+  if (Payback potential good?) then (yes)
+    :Approve loan;
+    :Disburse loan amount;
+    :Update account details;
+  else (no)
+    :Reject loan application;
+    :Notify customer;
+    stop
+  endif
+else (no)
+  :Reject loan application;
+  :Notify customer;
+  stop
+endif
+:Track repayments;
+if (Payment overdue?) then (yes)
+  :Mark customer as defaulter;
+else (no)
+endif
+stop
+@enduml

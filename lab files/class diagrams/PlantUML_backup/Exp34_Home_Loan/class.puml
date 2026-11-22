@@ -1,0 +1,89 @@
+@startuml
+title Home Loan Management System - Class Diagram
+skinparam classAttributeIconSize 0
+class Admin {
+  - adminId : int
+  - name : String
+  - password : String
+  + login()
+  + addCustomer()
+  + viewCustomerRecords()
+  + checkDefaulters()
+  + approveLoan()
+}
+class Customer {
+  - customerId : int
+  - name : String
+  - phone : String
+  - address : String
+  - occupation : int
+  - monthlyIncome : double
+  + viewAccountDetails()
+  + applyLoan()
+  + repayLoan()
+}
+class Account {
+  - accountNo : int
+  - balance : double
+  - openDate : Date
+  - status : String
+  + getDetails()
+  + updateBalance()
+}
+class LoanApplication {
+  - applicationId : int
+  - applyDate : Date
+  - requestedAmount : double
+  - status : String
+  + submit()
+  + approve()
+  + reject()
+}
+class Document {
+  - documentId : int
+  - documentType : String
+  - submittedDate : Date
+  - status : String
+  + verify()
+  + reject()
+}
+class Property {
+  - propertyId : int
+  - address : String
+  - propertyValue : double
+  - ownerName : String
+  + getValue()
+}
+class Loan {
+  - loanId : int
+  - principal : double
+  - interestRate : double
+  - tenureMonths : int
+  - status : String
+  + calculateEMI()
+  + close()
+}
+class Repayment {
+  - repaymentId : int
+  - dueDate : Date
+  - amountPaid : int
+  - status : String
+  + pay()
+  + isOverdue()
+}
+class Defaulter {
+  - defaulterId : int
+  - overdueAmount : double
+  - overdueDays : int
+  + flagCustomer()
+}
+Admin "1" -- "*" Customer : manages
+Customer "1" -- "1" Account : holds
+Customer "1" -- "*" LoanApplication : applies
+Admin "1" -- "*" LoanApplication : verifies
+LoanApplication "1" *-- "1..*" Document : has
+LoanApplication "1" *-- "1..*" Property : has
+LoanApplication "1" -- "0..1" Loan : approved as
+Loan "1" *-- "*" Repayment : repaid by
+Customer "1" -- "*" Defaulter : may become
+@enduml

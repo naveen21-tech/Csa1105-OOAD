@@ -1,0 +1,39 @@
+@startuml
+left to right direction
+title Car / Bike Vehicle Booking System - Use Case Diagram
+actor "Customer" as A_Customer
+actor "Admin" as A_Admin
+actor "Notification Service" as A_Notification_Service
+rectangle "Car / Bike Vehicle Booking System" {
+  usecase "Login" as U_Login
+  usecase "Manage Vehicles" as U_Manage_Vehicles
+  usecase "Assign Unique Access Detail" as U_Assign_Unique_Access_Detail
+  usecase "Browse Vehicles" as U_Browse_Vehicles
+  usecase "Reserve Vehicle" as U_Reserve_Vehicle
+  usecase "Approve Reservation" as U_Approve_Reservation
+  usecase "Make Payment" as U_Make_Payment
+  usecase "Pick Up Vehicle" as U_Pick_Up_Vehicle
+  usecase "Return Vehicle" as U_Return_Vehicle
+  usecase "Send Pickup Reminder" as U_Send_Pickup_Reminder
+  usecase "Send Due Date Reminder" as U_Send_Due_Date_Reminder
+  usecase "Update Vehicle Log" as U_Update_Vehicle_Log
+}
+A_Customer --> U_Login
+A_Admin --> U_Login
+A_Admin --> U_Manage_Vehicles
+A_Admin --> U_Assign_Unique_Access_Detail
+A_Customer --> U_Browse_Vehicles
+A_Customer --> U_Reserve_Vehicle
+A_Admin --> U_Approve_Reservation
+A_Customer --> U_Make_Payment
+A_Customer --> U_Pick_Up_Vehicle
+A_Customer --> U_Return_Vehicle
+A_Notification_Service --> U_Send_Pickup_Reminder
+A_Notification_Service --> U_Send_Due_Date_Reminder
+A_Admin --> U_Update_Vehicle_Log
+U_Reserve_Vehicle ..> U_Browse_Vehicles : <<include>>
+U_Reserve_Vehicle ..> U_Make_Payment : <<include>>
+U_Pick_Up_Vehicle ..> U_Update_Vehicle_Log : <<include>>
+U_Return_Vehicle ..> U_Update_Vehicle_Log : <<include>>
+U_Manage_Vehicles ..> U_Assign_Unique_Access_Detail : <<include>>
+@enduml

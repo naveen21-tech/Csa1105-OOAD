@@ -1,0 +1,72 @@
+@startuml
+title Home Tax Collection System - Class Diagram
+skinparam classAttributeIconSize 0
+class Admin {
+  - adminId : int
+  - name : String
+  - password : String
+  + login()
+  + generateTax()
+  + takeAction()
+}
+class HomeOwner {
+  - ownerId : int
+  - name : String
+  - phone : String
+  - email : String
+  - address : String
+  + viewBill()
+  + payTax()
+}
+class Area {
+  - areaId : int
+  - areaName : double
+  - zone : String
+  - taxRate : double
+  + getHomes()
+}
+class Home {
+  - homeId : int
+  - doorNo : String
+  - street : String
+  - builtUpArea : double
+  - propertyType : String
+  - annualValue : double
+  + getDetails()
+}
+class TaxBill {
+  - billId : int
+  - billDate : Date
+  - amount : double
+  - dueDate : Date
+  - status : String
+  - penalty : double
+  + generate()
+  + send()
+  + markPaid()
+}
+class Payment {
+  - paymentId : int
+  - paymentDate : Date
+  - amount : double
+  - mode : String
+  - receiptNo : String
+  + payOnline()
+  + payOffline()
+}
+class Notification {
+  - notificationId : int
+  - type : String
+  - message : String
+  - sentDate : Date
+  + sendReminder()
+  + sendOverdueNotice()
+}
+Area "1" *-- "*" Home : covers
+HomeOwner "1" -- "*" Home : owns
+Home "1" -- "*" TaxBill : taxed by
+TaxBill "1" -- "0..1" Payment : paid by
+TaxBill "1" -- "*" Notification : triggers
+Admin "1" -- "*" TaxBill : generates
+Admin "1" -- "*" Notification : receives
+@enduml

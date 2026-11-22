@@ -1,0 +1,25 @@
+@startuml
+title Home Tax Collection System - Activity Diagram
+start
+:Admin generates home tax for all homes in area;
+:Send tax bill to home owner;
+:Owner views tax bill;
+if (Deadline near?) then (yes)
+  :Send reminder message to owner;
+else (no)
+endif
+if (Owner pays tax?) then (yes)
+  if (Online payment?) then (yes)
+    :Pay tax online;
+  else (no)
+    :Pay tax offline;
+  endif
+  :Update payment status;
+  :Issue receipt;
+else (no)
+  :Deadline crossed;
+  :Intimate owner and admin;
+  :Admin takes corresponding action;
+endif
+stop
+@enduml

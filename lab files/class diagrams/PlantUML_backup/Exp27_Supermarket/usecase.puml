@@ -1,0 +1,38 @@
+@startuml
+left to right direction
+title Supermarket Management System - Use Case Diagram
+actor "Admin" as A_Admin
+actor "Employee" as A_Employee
+actor "Customer" as A_Customer
+rectangle "Supermarket Management System" {
+  usecase "Login" as U_Login
+  usecase "Manage Stock Details" as U_Manage_Stock_Details
+  usecase "Manage Employee Details" as U_Manage_Employee_Details
+  usecase "Manage Customer Details" as U_Manage_Customer_Details
+  usecase "Intimate Low Stock" as U_Intimate_Low_Stock
+  usecase "Intimate Nearing Expiry" as U_Intimate_Nearing_Expiry
+  usecase "Purchase Products" as U_Purchase_Products
+  usecase "Generate Bill" as U_Generate_Bill
+  usecase "Maintain Loyalty Points" as U_Maintain_Loyalty_Points
+  usecase "Apply Loyalty Offers" as U_Apply_Loyalty_Offers
+  usecase "View Offers" as U_View_Offers
+}
+A_Admin --> U_Login
+A_Employee --> U_Login
+A_Admin --> U_Manage_Stock_Details
+A_Employee --> U_Manage_Stock_Details
+A_Admin --> U_Manage_Employee_Details
+A_Employee --> U_Manage_Customer_Details
+A_Admin --> U_Intimate_Low_Stock
+A_Admin --> U_Intimate_Nearing_Expiry
+A_Customer --> U_Purchase_Products
+A_Employee --> U_Generate_Bill
+A_Employee --> U_Maintain_Loyalty_Points
+A_Customer --> U_Apply_Loyalty_Offers
+A_Customer --> U_View_Offers
+U_Purchase_Products ..> U_Generate_Bill : <<include>>
+U_Generate_Bill ..> U_Maintain_Loyalty_Points : <<include>>
+U_Intimate_Low_Stock ..> U_Manage_Stock_Details : <<extend>>
+U_Intimate_Nearing_Expiry ..> U_Manage_Stock_Details : <<extend>>
+U_Apply_Loyalty_Offers ..> U_Generate_Bill : <<extend>>
+@enduml

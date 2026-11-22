@@ -1,0 +1,83 @@
+@startuml
+title Supermarket Management System - Class Diagram
+skinparam classAttributeIconSize 0
+class Admin {
+  - adminId : int
+  - name : String
+  - password : String
+  + login()
+  + manageEmployee()
+  + viewAlerts()
+}
+class Employee {
+  - employeeId : int
+  - name : String
+  - role : String
+  - salary : double
+  - phone : String
+  + login()
+  + generateBill()
+}
+class Customer {
+  - customerId : int
+  - name : String
+  - phone : String
+  - email : String
+  - loyaltyPoints : int
+  + purchase()
+  + viewOffers()
+}
+class Product {
+  - productId : int
+  - name : String
+  - price : double
+  - quantity : int
+  - expiryDate : Date
+  - reorderLevel : int
+  + isLowStock()
+  + isNearExpiry()
+}
+class Bill {
+  - billNo : String
+  - billDate : Date
+  - totalAmount : double
+  - discount : double
+  + generateBill()
+  + print()
+}
+class BillItem {
+  - quantity : int
+  - amount : double
+  + calculateAmount()
+}
+class LoyaltyCard {
+  - cardNo : String
+  - points : int
+  - tier : String
+  + addPoints()
+  + redeemPoints()
+}
+class Offer {
+  - offerId : int
+  - description : String
+  - discountPercentage : double
+  - minTier : String
+  + applyOffer()
+}
+class Notification {
+  - notificationId : int
+  - type : String
+  - message : String
+  - sentDate : Date
+  + send()
+}
+Admin "1" -- "*" Employee : manages
+Employee "1" -- "*" Bill : generates
+Customer "1" -- "*" Bill : pays
+Bill "1" *-- "1..*" BillItem : contains
+BillItem "*" -- "1" Product : refers
+Customer "1" -- "1" LoyaltyCard : owns
+LoyaltyCard "*" -- "*" Offer : eligible for
+Product "1" -- "*" Notification : raises
+Admin "1" -- "*" Notification : receives
+@enduml

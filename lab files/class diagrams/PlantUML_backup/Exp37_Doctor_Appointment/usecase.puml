@@ -1,0 +1,34 @@
+@startuml
+left to right direction
+title Doctor Appointment System - Use Case Diagram
+actor "Patient" as A_Patient
+actor "Doctor" as A_Doctor
+actor "Admin" as A_Admin
+rectangle "Doctor Appointment System" {
+  usecase "Login" as U_Login
+  usecase "Manage Doctor Availability" as U_Manage_Doctor_Availability
+  usecase "View Doctor Availability" as U_View_Doctor_Availability
+  usecase "Book Appointment" as U_Book_Appointment
+  usecase "Confirm Booking" as U_Confirm_Booking
+  usecase "Update Patient Record" as U_Update_Patient_Record
+  usecase "Update Doctor Schedule" as U_Update_Doctor_Schedule
+  usecase "Cancel Appointment" as U_Cancel_Appointment
+  usecase "View Appointments" as U_View_Appointments
+}
+A_Patient --> U_Login
+A_Doctor --> U_Login
+A_Admin --> U_Login
+A_Doctor --> U_Manage_Doctor_Availability
+A_Admin --> U_Manage_Doctor_Availability
+A_Patient --> U_View_Doctor_Availability
+A_Patient --> U_Book_Appointment
+A_Admin --> U_Confirm_Booking
+A_Patient --> U_Cancel_Appointment
+A_Patient --> U_View_Appointments
+A_Doctor --> U_View_Appointments
+U_Book_Appointment ..> U_View_Doctor_Availability : <<include>>
+U_Book_Appointment ..> U_Confirm_Booking : <<include>>
+U_Confirm_Booking ..> U_Update_Patient_Record : <<include>>
+U_Confirm_Booking ..> U_Update_Doctor_Schedule : <<include>>
+U_Cancel_Appointment ..> U_Book_Appointment : <<extend>>
+@enduml

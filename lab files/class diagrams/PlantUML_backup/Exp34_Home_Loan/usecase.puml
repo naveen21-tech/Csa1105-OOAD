@@ -1,0 +1,34 @@
+@startuml
+left to right direction
+title Home Loan Management System - Use Case Diagram
+actor "Admin" as A_Admin
+actor "Customer" as A_Customer
+rectangle "Home Loan Management System" {
+  usecase "Login" as U_Login
+  usecase "Add New Customer" as U_Add_New_Customer
+  usecase "View Customer Records" as U_View_Customer_Records
+  usecase "Check Defaulters" as U_Check_Defaulters
+  usecase "View Account Details" as U_View_Account_Details
+  usecase "Apply for New Loan" as U_Apply_for_New_Loan
+  usecase "Submit Documents" as U_Submit_Documents
+  usecase "Verify Documents" as U_Verify_Documents
+  usecase "Verify Payback Potential" as U_Verify_Payback_Potential
+  usecase "Approve Loan" as U_Approve_Loan
+  usecase "Repay Loan" as U_Repay_Loan
+}
+A_Admin --> U_Login
+A_Customer --> U_Login
+A_Admin --> U_Add_New_Customer
+A_Admin --> U_View_Customer_Records
+A_Admin --> U_Check_Defaulters
+A_Customer --> U_View_Account_Details
+A_Customer --> U_Apply_for_New_Loan
+A_Customer --> U_Submit_Documents
+A_Admin --> U_Verify_Documents
+A_Admin --> U_Verify_Payback_Potential
+A_Admin --> U_Approve_Loan
+A_Customer --> U_Repay_Loan
+U_Apply_for_New_Loan ..> U_Submit_Documents : <<include>>
+U_Approve_Loan ..> U_Verify_Documents : <<include>>
+U_Approve_Loan ..> U_Verify_Payback_Potential : <<include>>
+@enduml

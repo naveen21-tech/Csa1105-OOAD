@@ -1,0 +1,35 @@
+@startuml
+left to right direction
+title Airplane Reservation System - Use Case Diagram
+actor "Customer" as A_Customer
+actor "Admin" as A_Admin
+actor "Payment Gateway" as A_Payment_Gateway
+rectangle "Airplane Reservation System" {
+  usecase "Register / Login" as U_Register___Login
+  usecase "Search Flights" as U_Search_Flights
+  usecase "View Flight Schedule" as U_View_Flight_Schedule
+  usecase "Reserve Seats" as U_Reserve_Seats
+  usecase "Make Payment" as U_Make_Payment
+  usecase "Cancel Reservation" as U_Cancel_Reservation
+  usecase "Add Aircraft" as U_Add_Aircraft
+  usecase "Add Flight" as U_Add_Flight
+  usecase "Add Flight Schedule" as U_Add_Flight_Schedule
+  usecase "Cancel Scheduled Flight" as U_Cancel_Scheduled_Flight
+  usecase "Notify Stakeholders" as U_Notify_Stakeholders
+}
+A_Customer --> U_Register___Login
+A_Admin --> U_Register___Login
+A_Customer --> U_Search_Flights
+A_Customer --> U_View_Flight_Schedule
+A_Customer --> U_Reserve_Seats
+A_Customer --> U_Make_Payment
+A_Payment_Gateway --> U_Make_Payment
+A_Customer --> U_Cancel_Reservation
+A_Admin --> U_Add_Aircraft
+A_Admin --> U_Add_Flight
+A_Admin --> U_Add_Flight_Schedule
+A_Admin --> U_Cancel_Scheduled_Flight
+U_Reserve_Seats ..> U_Search_Flights : <<include>>
+U_Reserve_Seats ..> U_Make_Payment : <<include>>
+U_Cancel_Scheduled_Flight ..> U_Notify_Stakeholders : <<include>>
+@enduml

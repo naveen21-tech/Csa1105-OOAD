@@ -1,0 +1,25 @@
+@startuml
+title Doctor Appointment System - Activity Diagram
+start
+:Doctor / admin sets availability;
+:Patient logs in;
+:Select appointment date;
+:View doctor availability;
+if (Slot available?) then (yes)
+  :Select doctor and time slot;
+  :Book appointment;
+  :Central system confirms booking;
+  :Update patient record;
+  :Update doctor schedule;
+  :Send confirmation;
+else (no)
+  :Show not available message;
+  stop
+endif
+if (Cancel appointment?) then (yes)
+  :Cancel appointment;
+  :Release the slot;
+else (no)
+endif
+stop
+@enduml

@@ -1,0 +1,62 @@
+@startuml
+title Gardener Booking System - Class Diagram
+skinparam classAttributeIconSize 0
+class CentralSystem {
+  - systemId : int
+  - name : String
+  + manageAvailability()
+  + confirmBooking()
+  + updateRecords()
+}
+class Customer {
+  - customerId : int
+  - name : String
+  - phone : String
+  - email : String
+  + login()
+  + viewAvailability()
+  + bookAppointment()
+  + cancelAppointment()
+}
+class Gardener {
+  - gardenerId : int
+  - name : String
+  - expertise : String
+  - phone : String
+  + setAvailability()
+  + viewAppointments()
+}
+class Availability {
+  - availabilityId : int
+  - date : Date
+  - startTime : Date
+  - endTime : Date
+  - isBooked : boolean
+  + isAvailable()
+  + markBooked()
+}
+class Appointment {
+  - appointmentId : int
+  - appointmentDate : Date
+  - appointmentTime : Date
+  - status : String
+  - remarks : String
+  + book()
+  + confirm()
+  + cancel()
+}
+class Service {
+  - serviceId : int
+  - name : String
+  - duration : int
+  - fee : double
+  + getDetails()
+}
+CentralSystem "1" -- "*" Gardener : manages
+CentralSystem "1" -- "*" Appointment : confirms
+Customer "1" -- "*" Appointment : books
+Gardener "1" -- "*" Appointment : attends
+Gardener "1" *-- "*" Availability : has
+Appointment "0..1" -- "1" Availability : uses slot
+Appointment "*" -- "1" Service : for
+@enduml

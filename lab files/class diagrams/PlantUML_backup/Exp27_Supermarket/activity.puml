@@ -1,0 +1,23 @@
+@startuml
+title Supermarket Management System - Activity Diagram
+start
+:Admin / employee logs in;
+:Update stock, employee and customer details;
+:Check stock level and expiry dates;
+if (Low stock or nearing expiry?) then (yes)
+  :Intimate product status to admin;
+  :Reorder or remove product;
+else (no)
+endif
+:Customer selects products at billing;
+:Identify customer loyalty card;
+if (Loyalty member?) then (yes)
+  :Fetch loyalty points and tier;
+  :Apply loyalty based offers;
+else (no)
+endif
+:Generate bill;
+:Update stock and loyalty points;
+:Print bill;
+stop
+@enduml

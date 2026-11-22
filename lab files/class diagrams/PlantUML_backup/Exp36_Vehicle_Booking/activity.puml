@@ -1,0 +1,29 @@
+@startuml
+title Car / Bike Vehicle Booking System - Activity Diagram
+start
+:Admin adds vehicle with unique access detail;
+:Customer logs in;
+:Browse available vehicles;
+:Reserve vehicle for pickup and due date;
+if (Reservation approved?) then (yes)
+  :Make payment;
+  :Log reservation event;
+else (no)
+  :Notify rejection to customer;
+  stop
+endif
+if (Pickup date approaching?) then (yes)
+  :Send pickup reminder;
+else (no)
+endif
+:Customer picks up vehicle;
+:Log pickup event;
+if (Due date approaching?) then (yes)
+  :Send due date reminder;
+else (no)
+endif
+:Customer returns vehicle;
+:Log return event;
+:Update vehicle status to available;
+stop
+@enduml
