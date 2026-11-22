@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<XMI xmlns:UML="http://schema.omg.org/spec/UML/1.3" verified="false" timestamp="2026-10-28" xmi.version="1.2">
+ <XMI.header>
+  <XMI.documentation>
+   <XMI.exporter>umbrello uml modeller http://umbrello.kde.org</XMI.exporter>
+   <XMI.exporterVersion>1.6.0</XMI.exporterVersion>
+   <XMI.exporterEncoding>UnicodeUTF8</XMI.exporterEncoding>
+  </XMI.documentation>
+  <XMI.metamodel xmi.name="UML" xmi.version="1.3" href="UML.xml" />
+ </XMI.header>
+ <XMI.content>
+  <UML:Model isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="m1" name="Blood Bank Registration System">
+   <UML:Namespace.ownedElement>
+    <UML:Stereotype isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="folder" name="folder" />
+    <UML:Stereotype isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="oo00001" name="include" />
+    <UML:Stereotype isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="oo00002" name="extend" />
+    <UML:Package isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" stereotype="folder" visibility="public" xmi.id="Logical_View" name="Logical View">
+     <UML:Namespace.ownedElement>
+      <UML:Package isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" stereotype="folder" visibility="public" xmi.id="Datatypes" name="Datatypes">
+       <UML:Namespace.ownedElement>
+        <UML:DataType isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00013" name="String" />
+        <UML:DataType isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00016" name="int" />
+        <UML:DataType isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00020" name="Date" />
+        <UML:DataType isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00023" name="void" />
+        <UML:DataType isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00032" name="boolean" />
+        <UML:DataType isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00044" name="List" />
+       </UML:Namespace.ownedElement>
+      </UML:Package>
+     </UML:Namespace.ownedElement>
+    </UML:Package>
+    <UML:Package isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" stereotype="folder" visibility="public" xmi.id="UseCase_View" name="Use Case View">
+     <UML:Namespace.ownedElement>
+      <UML:Actor isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00109" name="Donor" />
+      <UML:Actor isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00110" name="Hospital" />
+      <UML:Actor isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00111" name="Central System" />
+      <UML:UseCase isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00112" name="Register as Donor" />
+      <UML:UseCase isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00113" name="Provide Blood Group and Availability" />
+      <UML:UseCase isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00114" name="Verify Donor Eligibility" />
+      <UML:UseCase isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00115" name="Update Availability" />
+      <UML:UseCase isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00116" name="Search Suitable Donors" />
+      <UML:UseCase isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00117" name="Request Appointment" />
+      <UML:UseCase isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00118" name="Confirm Appointment" />
+      <UML:UseCase isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00119" name="Handle Unavailable Donor" />
+      <UML:UseCase isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00120" name="Release Contact Details After Confirmation" />
+      <UML:UseCase isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00121" name="Manage Donor Records" />
+      <UML:Association isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00122" name="">
+       <UML:Association.connection>
+        <UML:AssociationEnd isSpecification="false" visibility="public" xmi.id="oo00123" type="oo00109" aggregation="none" isNavigable="true" multiplicity="" name="" changeability="changeable" targetScope="instance" />
+        <UML:AssociationEnd isSpecification="false" visibility="public" xmi.id="oo00124" type="oo00112" aggregation="none" isNavigable="true" multiplicity="" name="" changeability="changeable" targetScope="instance" />
+       </UML:Association.connection>
+      </UML:Association>
+      <UML:Association isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00125" name="">
+       <UML:Association.connection>
+        <UML:AssociationEnd isSpecification="false" visibility="public" xmi.id="oo00126" type="oo00109" aggregation="none" isNavigable="true" multiplicity="" name="" changeability="changeable" targetScope="instance" />
+        <UML:AssociationEnd isSpecification="false" visibility="public" xmi.id="oo00127" type="oo00115" aggregation="none" isNavigable="true" multiplicity="" name="" changeability="changeable" targetScope="instance" />
+       </UML:Association.connection>
+      </UML:Association>
+      <UML:Association isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00128" name="">
+       <UML:Association.connection>
+        <UML:AssociationEnd isSpecification="false" visibility="public" xmi.id="oo00129" type="oo00109" aggregation="none" isNavigable="true" multiplicity="" name="" changeability="changeable" targetScope="instance" />
+        <UML:AssociationEnd isSpecification="false" visibility="public" xmi.id="oo00130" type="oo00118" aggregation="none" isNavigable="true" multiplicity="" name="" changeability="changeable" targetScope="instance" />
+       </UML:Association.connection>
+      </UML:Association>
+      <UML:Association isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00131" name="">
+       <UML:Association.connection>
+        <UML:AssociationEnd isSpecification="false" visibility="public" xmi.id="oo00132" type="oo00110" aggregation="none" isNavigable="true" multiplicity="" name="" changeability="changeable" targetScope="instance" />
+        <UML:AssociationEnd isSpecification="false" visibility="public" xmi.id="oo00133" type="oo00116" aggregation="none" isNavigable="true" multiplicity="" name="" changeability="changeable" targetScope="instance" />
+       </UML:Association.connection>
+      </UML:Association>
+      <UML:Association isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00134" name="">
+       <UML:Association.connection>
+        <UML:AssociationEnd isSpecification="false" visibility="public" xmi.id="oo00135" type="oo00110" aggregation="none" isNavigable="true" multiplicity="" name="" changeability="changeable" targetScope="instance" />
+        <UML:AssociationEnd isSpecification="false" visibility="public" xmi.id="oo00136" type="oo00117" aggregation="none" isNavigable="true" multiplicity="" name="" changeability="changeable" targetScope="instance" />
+       </UML:Association.connection>
+      </UML:Association>
+      <UML:Association isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00137" name="">
+       <UML:Association.connection>
+        <UML:AssociationEnd isSpecification="false" visibility="public" xmi.id="oo00138" type="oo00111" aggregation="none" isNavigable="true" multiplicity="" name="" changeability="changeable" targetScope="instance" />
+        <UML:AssociationEnd isSpecification="false" visibility="public" xmi.id="oo00139" type="oo00114" aggregation="none" isNavigable="true" multiplicity="" name="" changeability="changeable" targetScope="instance" />
+       </UML:Association.connection>
+      </UML:Association>
+      <UML:Association isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00140" name="">
+       <UML:Association.connection>
+        <UML:AssociationEnd isSpecification="false" visibility="public" xmi.id="oo00141" type="oo00111" aggregation="none" isNavigable="true" multiplicity="" name="" changeability="changeable" targetScope="instance" />
+        <UML:AssociationEnd isSpecification="false" visibility="public" xmi.id="oo00142" type="oo00121" aggregation="none" isNavigable="true" multiplicity="" name="" changeability="changeable" targetScope="instance" />
+       </UML:Association.connection>
+      </UML:Association>
+      <UML:Association isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00143" name="">
+       <UML:Association.connection>
+        <UML:AssociationEnd isSpecification="false" visibility="public" xmi.id="oo00144" type="oo00111" aggregation="none" isNavigable="true" multiplicity="" name="" changeability="changeable" targetScope="instance" />
+        <UML:AssociationEnd isSpecification="false" visibility="public" xmi.id="oo00145" type="oo00120" aggregation="none" isNavigable="true" multiplicity="" name="" changeability="changeable" targetScope="instance" />
+       </UML:Association.connection>
+      </UML:Association>
+      <UML:Dependency isSpecification="false" visibility="public" xmi.id="oo00146" client="oo00112" supplier="oo00113" name="" stereotype="oo00001" />
+      <UML:Dependency isSpecification="false" visibility="public" xmi.id="oo00147" client="oo00112" supplier="oo00114" name="" stereotype="oo00001" />
+      <UML:Dependency isSpecification="false" visibility="public" xmi.id="oo00148" client="oo00118" supplier="oo00120" name="" stereotype="oo00001" />
+      <UML:Dependency isSpecification="false" visibility="public" xmi.id="oo00149" client="oo00119" supplier="oo00117" name="" stereotype="oo00002" />
+     </UML:Namespace.ownedElement>
+    </UML:Package>
+    <UML:Package isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" stereotype="folder" visibility="public" xmi.id="Component_View" name="Component View">
+     <UML:Namespace.ownedElement />
+    </UML:Package>
+    <UML:Package isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" stereotype="folder" visibility="public" xmi.id="Deployment_View" name="Deployment View">
+     <UML:Namespace.ownedElement />
+    </UML:Package>
+    <UML:Package isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" stereotype="folder" visibility="public" xmi.id="EntityRelationship_Model" name="Entity Relationship Model">
+     <UML:Namespace.ownedElement />
+    </UML:Package>
+   </UML:Namespace.ownedElement>
+  </UML:Model>
+ </XMI.content>
+ <XMI.extensions xmi.extender="umbrello">
+  <docsettings viewid="oo00151" documentation="" uniqueid="0" />
+  <diagrams>
+   <diagram xmi.id="oo00151" name="Use Case Diagram" type="2" documentation="System boundary: Blood Bank Registration System" backgroundcolor="#ffffff" gridcolor="#c0c0c0" linecolor="#ff0000" linewidth="0" textcolor="#000000" usefillcolor="1" font="Sans Serif,10,-1,5,50,0,0,0,0,0" canvasheight="570" canvaswidth="1202" snapgrid="0" showgrid="0" snapx="10" snapy="10" zoom="100" showopsig="1" isopen="1">
+    <widgets>
+     <boxwidget xmi.id="ww00001" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="0" x="170" y="40" width="832" height="470" isinstance="0" showstereotype="1" />
+     <actorwidget xmi.id="oo00109" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="30" y="142" width="80" height="90" isinstance="0" showstereotype="1" />
+     <actorwidget xmi.id="oo00110" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="30" y="357" width="80" height="90" isinstance="0" showstereotype="1" />
+     <actorwidget xmi.id="oo00111" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="1062" y="250" width="80" height="90" isinstance="0" showstereotype="1" />
+     <usecasewidget xmi.id="oo00112" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="301" y="90" width="174" height="44" isinstance="0" showstereotype="1" />
+     <usecasewidget xmi.id="oo00113" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="628" y="90" width="312" height="44" isinstance="0" showstereotype="1" />
+     <usecasewidget xmi.id="oo00114" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="275" y="170" width="225" height="44" isinstance="0" showstereotype="1" />
+     <usecasewidget xmi.id="oo00115" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="690" y="170" width="188" height="44" isinstance="0" showstereotype="1" />
+     <usecasewidget xmi.id="oo00116" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="283" y="250" width="210" height="44" isinstance="0" showstereotype="1" />
+     <usecasewidget xmi.id="oo00117" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="690" y="250" width="188" height="44" isinstance="0" showstereotype="1" />
+     <usecasewidget xmi.id="oo00118" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="294" y="330" width="188" height="44" isinstance="0" showstereotype="1" />
+     <usecasewidget xmi.id="oo00119" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="671" y="330" width="225" height="44" isinstance="0" showstereotype="1" />
+     <usecasewidget xmi.id="oo00120" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="210" y="410" width="356" height="44" isinstance="0" showstereotype="1" />
+     <usecasewidget xmi.id="oo00121" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="686" y="410" width="196" height="44" isinstance="0" showstereotype="1" />
+     <floatingtext xmi.id="ww00002" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="180" y="48" width="240" height="22" isinstance="0" showstereotype="1" text="Blood Bank Registration System" pretext="" posttext="" role="700" />
+    </widgets>
+    <messages />
+    <associations>
+     <assocwidget xmi.id="oo00122" type="503" widgetaid="oo00109" widgetbid="oo00112" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="110" starty="177" />
+       <endpoint endx="301" endy="132" />
+      </linepath>
+     </assocwidget>
+     <assocwidget xmi.id="oo00125" type="503" widgetaid="oo00109" widgetbid="oo00115" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="110" starty="187" />
+       <endpoint endx="690" endy="191" />
+      </linepath>
+     </assocwidget>
+     <assocwidget xmi.id="oo00128" type="503" widgetaid="oo00109" widgetbid="oo00118" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="110" starty="207" />
+       <endpoint endx="345" endy="330" />
+      </linepath>
+     </assocwidget>
+     <assocwidget xmi.id="oo00131" type="503" widgetaid="oo00110" widgetbid="oo00116" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="110" starty="385" />
+       <endpoint endx="334" endy="294" />
+      </linepath>
+     </assocwidget>
+     <assocwidget xmi.id="oo00134" type="503" widgetaid="oo00110" widgetbid="oo00117" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="110" starty="394" />
+       <endpoint endx="690" endy="289" />
+      </linepath>
+     </assocwidget>
+     <assocwidget xmi.id="oo00137" type="503" widgetaid="oo00111" widgetbid="oo00114" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="1062" starty="289" />
+       <endpoint endx="500" endy="208" />
+      </linepath>
+     </assocwidget>
+     <assocwidget xmi.id="oo00140" type="503" widgetaid="oo00111" widgetbid="oo00121" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="1062" starty="312" />
+       <endpoint endx="835" endy="410" />
+      </linepath>
+     </assocwidget>
+     <assocwidget xmi.id="oo00143" type="503" widgetaid="oo00111" widgetbid="oo00120" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="1062" starty="302" />
+       <endpoint endx="502" endy="410" />
+      </linepath>
+     </assocwidget>
+     <assocwidget xmi.id="oo00146" type="502" widgetaid="oo00112" widgetbid="oo00113" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="475" starty="112" />
+       <endpoint endx="628" endy="112" />
+      </linepath>
+     </assocwidget>
+     <assocwidget xmi.id="oo00147" type="502" widgetaid="oo00112" widgetbid="oo00114" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="387" starty="134" />
+       <endpoint endx="387" endy="170" />
+      </linepath>
+     </assocwidget>
+     <assocwidget xmi.id="oo00148" type="502" widgetaid="oo00118" widgetbid="oo00120" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="388" starty="374" />
+       <endpoint endx="388" endy="410" />
+      </linepath>
+     </assocwidget>
+     <assocwidget xmi.id="oo00149" type="502" widgetaid="oo00119" widgetbid="oo00117" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="783" starty="330" />
+       <endpoint endx="783" endy="294" />
+      </linepath>
+     </assocwidget>
+    </associations>
+   </diagram>
+  </diagrams>
+ </XMI.extensions>
+</XMI>

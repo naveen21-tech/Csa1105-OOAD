@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<XMI xmlns:UML="http://schema.omg.org/spec/UML/1.3" verified="false" timestamp="2026-10-28" xmi.version="1.2">
+ <XMI.header>
+  <XMI.documentation>
+   <XMI.exporter>umbrello uml modeller http://umbrello.kde.org</XMI.exporter>
+   <XMI.exporterVersion>1.6.0</XMI.exporterVersion>
+   <XMI.exporterEncoding>UnicodeUTF8</XMI.exporterEncoding>
+  </XMI.documentation>
+  <XMI.metamodel xmi.name="UML" xmi.version="1.3" href="UML.xml" />
+ </XMI.header>
+ <XMI.content>
+  <UML:Model isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="m1" name="Blood Bank Registration System">
+   <UML:Namespace.ownedElement>
+    <UML:Stereotype isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="folder" name="folder" />
+    <UML:Stereotype isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="oo00001" name="include" />
+    <UML:Stereotype isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="oo00002" name="extend" />
+    <UML:Package isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" stereotype="folder" visibility="public" xmi.id="Logical_View" name="Logical View">
+     <UML:Namespace.ownedElement>
+      <UML:Package isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" stereotype="folder" visibility="public" xmi.id="Datatypes" name="Datatypes">
+       <UML:Namespace.ownedElement>
+        <UML:DataType isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00013" name="String" />
+        <UML:DataType isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00016" name="int" />
+        <UML:DataType isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00020" name="Date" />
+        <UML:DataType isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00023" name="void" />
+        <UML:DataType isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00032" name="boolean" />
+        <UML:DataType isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" visibility="public" xmi.id="oo00044" name="List" />
+       </UML:Namespace.ownedElement>
+      </UML:Package>
+     </UML:Namespace.ownedElement>
+    </UML:Package>
+    <UML:Package isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" stereotype="folder" visibility="public" xmi.id="UseCase_View" name="Use Case View">
+     <UML:Namespace.ownedElement />
+    </UML:Package>
+    <UML:Package isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" stereotype="folder" visibility="public" xmi.id="Component_View" name="Component View">
+     <UML:Namespace.ownedElement />
+    </UML:Package>
+    <UML:Package isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" stereotype="folder" visibility="public" xmi.id="Deployment_View" name="Deployment View">
+     <UML:Namespace.ownedElement />
+    </UML:Package>
+    <UML:Package isSpecification="false" isAbstract="false" isLeaf="false" isRoot="false" stereotype="folder" visibility="public" xmi.id="EntityRelationship_Model" name="Entity Relationship Model">
+     <UML:Namespace.ownedElement />
+    </UML:Package>
+   </UML:Namespace.ownedElement>
+  </UML:Model>
+ </XMI.content>
+ <XMI.extensions xmi.extender="umbrello">
+  <docsettings viewid="oo00152" documentation="" uniqueid="0" />
+  <diagrams>
+   <diagram xmi.id="oo00152" name="Activity Diagram" type="6" documentation="Swimlanes (activity partitions): Donor | Central System | Hospital" backgroundcolor="#ffffff" gridcolor="#c0c0c0" linecolor="#ff0000" linewidth="0" textcolor="#000000" usefillcolor="1" font="Sans Serif,10,-1,5,50,0,0,0,0,0" canvasheight="1675" canvaswidth="1230" snapgrid="0" showgrid="0" snapx="10" snapy="10" zoom="100" showopsig="1" isopen="1">
+    <widgets>
+     <activitywidget xmi.id="oo00153" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="183" y="40" width="24" height="24" isinstance="0" showstereotype="1" activityname="" documentation="Swimlane: Donor" activitytype="0" />
+     <activitywidget xmi.id="oo00154" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="30" y="115" width="330" height="36" isinstance="0" showstereotype="1" activityname="Register with blood group and availability details" documentation="Swimlane: Donor" activitytype="3" />
+     <activitywidget xmi.id="oo00155" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="486" y="190" width="198" height="36" isinstance="0" showstereotype="1" activityname="Verify donor eligibility" documentation="Swimlane: Central System" activitytype="3" />
+     <activitywidget xmi.id="oo00156" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="565" y="265" width="40" height="28" isinstance="0" showstereotype="1" activityname="" documentation="Swimlane: Central System&#10;Decision: Donor eligible?" activitytype="4" />
+     <activitywidget xmi.id="oo00157" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="507" y="340" width="156" height="36" isinstance="0" showstereotype="1" activityname="Store donor record" documentation="Swimlane: Central System" activitytype="3" />
+     <activitywidget xmi.id="oo00158" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="461" y="415" width="247" height="36" isinstance="0" showstereotype="1" activityname="Reject registration with reason" documentation="Swimlane: Central System" activitytype="3" />
+     <activitywidget xmi.id="oo00159" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="96" y="490" width="198" height="36" isinstance="0" showstereotype="1" activityname="Receive rejection notice" documentation="Swimlane: Donor" activitytype="3" />
+     <activitywidget xmi.id="oo00160" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="183" y="565" width="24" height="24" isinstance="0" showstereotype="1" activityname="" documentation="Swimlane: Donor" activitytype="1" />
+     <activitywidget xmi.id="oo00161" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="830" y="640" width="289" height="36" isinstance="0" showstereotype="1" activityname="Search donors by blood group and city" documentation="Swimlane: Hospital" activitytype="3" />
+     <activitywidget xmi.id="oo00162" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="420" y="715" width="330" height="36" isinstance="0" showstereotype="1" activityname="Display limited donor summary without contact details" documentation="Swimlane: Central System" activitytype="3" />
+     <activitywidget xmi.id="oo00163" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="834" y="790" width="282" height="36" isinstance="0" showstereotype="1" activityname="Select donor and request appointment" documentation="Swimlane: Hospital" activitytype="3" />
+     <activitywidget xmi.id="oo00164" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="486" y="865" width="198" height="36" isinstance="0" showstereotype="1" activityname="Check donor availability" documentation="Swimlane: Central System" activitytype="3" />
+     <activitywidget xmi.id="oo00165" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="565" y="940" width="40" height="28" isinstance="0" showstereotype="1" activityname="" documentation="Swimlane: Central System&#10;Decision: Donor available?" activitytype="4" />
+     <activitywidget xmi.id="oo00166" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="444" y="1015" width="282" height="36" isinstance="0" showstereotype="1" activityname="Forward appointment request to donor" documentation="Swimlane: Central System" activitytype="3" />
+     <activitywidget xmi.id="oo00167" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="175" y="1090" width="40" height="28" isinstance="0" showstereotype="1" activityname="" documentation="Swimlane: Donor&#10;Decision: Accept appointment?" activitytype="4" />
+     <activitywidget xmi.id="oo00168" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="113" y="1165" width="163" height="36" isinstance="0" showstereotype="1" activityname="Confirm appointment" documentation="Swimlane: Donor" activitytype="3" />
+     <activitywidget xmi.id="oo00169" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="420" y="1240" width="330" height="36" isinstance="0" showstereotype="1" activityname="Release contact details for the confirmed appointment" documentation="Swimlane: Central System" activitytype="3" />
+     <activitywidget xmi.id="oo00170" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="848" y="1315" width="254" height="36" isinstance="0" showstereotype="1" activityname="Receive appointment confirmation" documentation="Swimlane: Hospital" activitytype="3" />
+     <activitywidget xmi.id="oo00171" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="883" y="1390" width="184" height="36" isinstance="0" showstereotype="1" activityname="Receive decline notice" documentation="Swimlane: Hospital" activitytype="3" />
+     <activitywidget xmi.id="oo00172" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="810" y="1465" width="330" height="36" isinstance="0" showstereotype="1" activityname="Receive unavailability notice and search again" documentation="Swimlane: Hospital" activitytype="3" />
+     <activitywidget xmi.id="oo00173" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="963" y="1540" width="24" height="24" isinstance="0" showstereotype="1" activityname="" documentation="Swimlane: Hospital" activitytype="1" />
+    </widgets>
+    <messages />
+    <associations>
+     <assocwidget xmi.id="-1" type="515" widgetaid="oo00153" widgetbid="oo00154" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="195" starty="64" />
+       <endpoint endx="195" endy="115" />
+      </linepath>
+     </assocwidget>
+     <assocwidget xmi.id="-1" type="515" widgetaid="oo00154" widgetbid="oo00155" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="288" starty="151" />
+       <endpoint endx="491" endy="190" />
+      </linepath>
+     </assocwidget>
+     <assocwidget xmi.id="-1" type="515" widgetaid="oo00155" widgetbid="oo00156" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="585" starty="226" />
+       <endpoint endx="585" endy="265" />
+      </linepath>
+     </assocwidget>
+     <assocwidget xmi.id="-1" type="515" widgetaid="oo00156" widgetbid="oo00157" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="585" starty="293" />
+       <endpoint endx="585" endy="340" />
+      </linepath>
+      <floatingtext xmi.id="ww00003" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="590" y="306" width="80" height="20" isinstance="0" showstereotype="1" text="[eligible]" pretext="" posttext="" role="703" />
+     </assocwidget>
+     <assocwidget xmi.id="-1" type="515" widgetaid="oo00156" widgetbid="oo00158" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="584" starty="293" />
+       <endpoint endx="584" endy="415" />
+      </linepath>
+      <floatingtext xmi.id="ww00004" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="589" y="344" width="108" height="20" isinstance="0" showstereotype="1" text="[not eligible]" pretext="" posttext="" role="703" />
+     </assocwidget>
+     <assocwidget xmi.id="-1" type="515" widgetaid="oo00158" widgetbid="oo00159" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="491" starty="451" />
+       <endpoint endx="288" endy="490" />
+      </linepath>
+     </assocwidget>
+     <assocwidget xmi.id="-1" type="515" widgetaid="oo00159" widgetbid="oo00160" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="195" starty="526" />
+       <endpoint endx="195" endy="565" />
+      </linepath>
+     </assocwidget>
+     <assocwidget xmi.id="-1" type="515" widgetaid="oo00157" widgetbid="oo00161" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="608" starty="376" />
+       <endpoint endx="951" endy="640" />
+      </linepath>
+     </assocwidget>
+     <assocwidget xmi.id="-1" type="515" widgetaid="oo00161" widgetbid="oo00162" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="881" starty="676" />
+       <endpoint endx="678" endy="715" />
+      </linepath>
+     </assocwidget>
+     <assocwidget xmi.id="-1" type="515" widgetaid="oo00162" widgetbid="oo00163" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="678" starty="751" />
+       <endpoint endx="881" endy="790" />
+      </linepath>
+     </assocwidget>
+     <assocwidget xmi.id="-1" type="515" widgetaid="oo00163" widgetbid="oo00164" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="881" starty="826" />
+       <endpoint endx="678" endy="865" />
+      </linepath>
+     </assocwidget>
+     <assocwidget xmi.id="-1" type="515" widgetaid="oo00164" widgetbid="oo00165" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="585" starty="901" />
+       <endpoint endx="585" endy="940" />
+      </linepath>
+     </assocwidget>
+     <assocwidget xmi.id="-1" type="515" widgetaid="oo00165" widgetbid="oo00166" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="585" starty="968" />
+       <endpoint endx="585" endy="1015" />
+      </linepath>
+      <floatingtext xmi.id="ww00005" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="590" y="981" width="87" height="20" isinstance="0" showstereotype="1" text="[available]" pretext="" posttext="" role="703" />
+     </assocwidget>
+     <assocwidget xmi.id="-1" type="515" widgetaid="oo00166" widgetbid="oo00167" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="486" starty="1051" />
+       <endpoint endx="215" endy="1100" />
+      </linepath>
+     </assocwidget>
+     <assocwidget xmi.id="-1" type="515" widgetaid="oo00167" widgetbid="oo00168" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="194" starty="1118" />
+       <endpoint endx="194" endy="1165" />
+      </linepath>
+      <floatingtext xmi.id="ww00006" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="199" y="1131" width="80" height="20" isinstance="0" showstereotype="1" text="[accepted]" pretext="" posttext="" role="703" />
+     </assocwidget>
+     <assocwidget xmi.id="-1" type="515" widgetaid="oo00168" widgetbid="oo00169" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="276" starty="1198" />
+       <endpoint endx="491" endy="1240" />
+      </linepath>
+     </assocwidget>
+     <assocwidget xmi.id="-1" type="515" widgetaid="oo00169" widgetbid="oo00170" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="678" starty="1276" />
+       <endpoint endx="881" endy="1315" />
+      </linepath>
+     </assocwidget>
+     <assocwidget xmi.id="-1" type="515" widgetaid="oo00167" widgetbid="oo00171" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="215" starty="1111" />
+       <endpoint endx="928" endy="1390" />
+      </linepath>
+      <floatingtext xmi.id="ww00007" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="576" y="1240" width="80" height="20" isinstance="0" showstereotype="1" text="[declined]" pretext="" posttext="" role="703" />
+     </assocwidget>
+     <assocwidget xmi.id="-1" type="515" widgetaid="oo00165" widgetbid="oo00172" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="595" starty="968" />
+       <endpoint endx="961" endy="1465" />
+      </linepath>
+      <floatingtext xmi.id="ww00008" localid="0" textcolor="none" linecolor="none" linewidth="none" fillcolor="none" usefillcolor="1" x="783" y="1206" width="101" height="20" isinstance="0" showstereotype="1" text="[unavailable]" pretext="" posttext="" role="703" />
+     </assocwidget>
+     <assocwidget xmi.id="-1" type="515" widgetaid="oo00170" widgetbid="oo00173" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="975" starty="1351" />
+       <endpoint endx="975" endy="1540" />
+      </linepath>
+     </assocwidget>
+     <assocwidget xmi.id="-1" type="515" widgetaid="oo00171" widgetbid="oo00173" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="975" starty="1426" />
+       <endpoint endx="975" endy="1540" />
+      </linepath>
+     </assocwidget>
+     <assocwidget xmi.id="-1" type="515" widgetaid="oo00172" widgetbid="oo00173" indexa="1" totalcounta="2" indexb="1" totalcountb="2" linecolor="none" linewidth="none" usefillcolor="1" autolayout="0">
+      <linepath>
+       <startpoint startx="975" starty="1501" />
+       <endpoint endx="975" endy="1540" />
+      </linepath>
+     </assocwidget>
+    </associations>
+   </diagram>
+  </diagrams>
+ </XMI.extensions>
+</XMI>
