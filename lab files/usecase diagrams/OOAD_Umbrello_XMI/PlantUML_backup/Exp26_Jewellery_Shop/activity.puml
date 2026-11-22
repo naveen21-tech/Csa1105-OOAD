@@ -1,0 +1,23 @@
+@startuml
+title Jewellery Shop Management System - Activity Diagram
+start
+:Admin logs in;
+if (Existing customer?) then (yes)
+  :Update customer details;
+else (no)
+  :Add new customer details;
+endif
+:Select jewellery items;
+:Enter quantity;
+if (Stock available?) then (yes)
+  :Calculate total amount;
+  :Generate bill;
+  :Update customer purchase record;
+  :Update stock;
+  :Print bill;
+else (no)
+  :Display out of stock message;
+  stop
+endif
+stop
+@enduml

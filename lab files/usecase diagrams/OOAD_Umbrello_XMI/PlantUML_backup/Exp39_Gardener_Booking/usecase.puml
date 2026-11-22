@@ -1,0 +1,34 @@
+@startuml
+left to right direction
+title Gardener Booking System - Use Case Diagram
+actor "Customer" as A_Customer
+actor "Gardener" as A_Gardener
+actor "Admin" as A_Admin
+rectangle "Gardener Booking System" {
+  usecase "Login" as U_Login
+  usecase "Manage Gardener Availability" as U_Manage_Gardener_Availability
+  usecase "View Gardener Availability" as U_View_Gardener_Availability
+  usecase "Book Appointment" as U_Book_Appointment
+  usecase "Confirm Booking" as U_Confirm_Booking
+  usecase "Update Customer Record" as U_Update_Customer_Record
+  usecase "Update Gardener Schedule" as U_Update_Gardener_Schedule
+  usecase "Cancel Appointment" as U_Cancel_Appointment
+  usecase "View Appointments" as U_View_Appointments
+}
+A_Customer --> U_Login
+A_Gardener --> U_Login
+A_Admin --> U_Login
+A_Gardener --> U_Manage_Gardener_Availability
+A_Admin --> U_Manage_Gardener_Availability
+A_Customer --> U_View_Gardener_Availability
+A_Customer --> U_Book_Appointment
+A_Admin --> U_Confirm_Booking
+A_Customer --> U_Cancel_Appointment
+A_Customer --> U_View_Appointments
+A_Gardener --> U_View_Appointments
+U_Book_Appointment ..> U_View_Gardener_Availability : <<include>>
+U_Book_Appointment ..> U_Confirm_Booking : <<include>>
+U_Confirm_Booking ..> U_Update_Customer_Record : <<include>>
+U_Confirm_Booking ..> U_Update_Gardener_Schedule : <<include>>
+U_Cancel_Appointment ..> U_Book_Appointment : <<extend>>
+@enduml

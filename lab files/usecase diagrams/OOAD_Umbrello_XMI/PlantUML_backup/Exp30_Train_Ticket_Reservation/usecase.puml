@@ -1,0 +1,29 @@
+@startuml
+left to right direction
+title Train Ticket Reservation System - Use Case Diagram
+actor "Customer" as A_Customer
+actor "Admin" as A_Admin
+rectangle "Train Ticket Reservation System" {
+  usecase "Create Login" as U_Create_Login
+  usecase "Login" as U_Login
+  usecase "View Train and Seat Availability" as U_View_Train_and_Seat_Availability
+  usecase "Book Ticket" as U_Book_Ticket
+  usecase "Make Payment" as U_Make_Payment
+  usecase "View Train Status" as U_View_Train_Status
+  usecase "Cancel Ticket" as U_Cancel_Ticket
+  usecase "Calculate Refund" as U_Calculate_Refund
+  usecase "Manage Trains and Schedules" as U_Manage_Trains_and_Schedules
+}
+A_Customer --> U_Create_Login
+A_Customer --> U_Login
+A_Admin --> U_Login
+A_Customer --> U_View_Train_and_Seat_Availability
+A_Customer --> U_Book_Ticket
+A_Customer --> U_Make_Payment
+A_Customer --> U_View_Train_Status
+A_Customer --> U_Cancel_Ticket
+A_Admin --> U_Manage_Trains_and_Schedules
+U_Book_Ticket ..> U_View_Train_and_Seat_Availability : <<include>>
+U_Book_Ticket ..> U_Make_Payment : <<include>>
+U_Cancel_Ticket ..> U_Calculate_Refund : <<include>>
+@enduml

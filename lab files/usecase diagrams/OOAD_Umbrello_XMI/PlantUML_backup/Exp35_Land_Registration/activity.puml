@@ -1,0 +1,22 @@
+@startuml
+title Land Registration System - Activity Diagram
+start
+:Registrar maintains land, owner and citizen database;
+:Citizen submits land registration request;
+:Verify land and owner details;
+if (Details valid?) then (yes)
+  :Enter transaction amount;
+  :Calculate registration tax;
+  :Citizen pays tax;
+  :Record tax paid;
+  :Register land;
+  :Update land owner details;
+  :Update citizen details;
+  :Generate registration receipt;
+else (no)
+  :Reject request;
+  :Notify citizen;
+  stop
+endif
+stop
+@enduml

@@ -1,0 +1,66 @@
+@startuml
+title Jewellery Shop Management System - Class Diagram
+skinparam classAttributeIconSize 0
+class Admin {
+  - adminId : int
+  - name : String
+  - password : String
+  + login()
+  + addCustomer()
+  + updateCustomer()
+  + generateBill()
+}
+class Customer {
+  - customerId : int
+  - name : String
+  - phone : String
+  - address : String
+  - totalPurchase : String
+  + getDetails()
+  + updatePurchaseHistory()
+}
+class Jewellery {
+  - itemId : int
+  - name : String
+  - type : String
+  - weight : double
+  - price : double
+  - quantity : int
+  + getDetails()
+  + updateStock()
+}
+class Stock {
+  - stockId : int
+  - quantityAvailable : int
+  - lastUpdated : Date
+  + checkStock()
+  + reduceStock()
+}
+class Purchase {
+  - purchaseId : int
+  - purchaseDate : Date
+  - totalAmount : double
+  + addItem()
+  + calculateTotal()
+}
+class PurchaseItem {
+  - quantity : int
+  - price : double
+  + getAmount()
+}
+class Bill {
+  - billNo : String
+  - billDate : Date
+  - amount : double
+  - paymentMode : String
+  + generate()
+  + print()
+}
+Admin "1" -- "*" Customer : manages
+Customer "1" -- "*" Purchase : makes
+Purchase "1" *-- "1..*" PurchaseItem : contains
+PurchaseItem "*" -- "1" Jewellery : refers
+Purchase "1" -- "1" Bill : generates
+Jewellery "1" -- "1" Stock : tracked in
+Admin "1" -- "*" Bill : issues
+@enduml

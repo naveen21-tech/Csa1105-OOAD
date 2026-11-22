@@ -1,0 +1,25 @@
+@startuml
+title Salon / Beauty Parlour Reservation System - Activity Diagram
+start
+:Beautician / admin sets availability;
+:Customer logs in;
+:Select appointment date;
+:View beautician availability;
+if (Slot available?) then (yes)
+  :Select beautician and time slot;
+  :Book appointment;
+  :Central system confirms booking;
+  :Update customer record;
+  :Update beautician schedule;
+  :Send confirmation;
+else (no)
+  :Show not available message;
+  stop
+endif
+if (Cancel appointment?) then (yes)
+  :Cancel appointment;
+  :Release the slot;
+else (no)
+endif
+stop
+@enduml

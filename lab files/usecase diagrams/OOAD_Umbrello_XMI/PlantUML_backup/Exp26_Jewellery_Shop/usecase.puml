@@ -1,0 +1,31 @@
+@startuml
+left to right direction
+title Jewellery Shop Management System - Use Case Diagram
+actor "Admin" as A_Admin
+actor "Customer" as A_Customer
+rectangle "Jewellery Shop Management System" {
+  usecase "Login" as U_Login
+  usecase "Add New Customer Details" as U_Add_New_Customer_Details
+  usecase "Update Customer Details" as U_Update_Customer_Details
+  usecase "Manage Jewellery Items" as U_Manage_Jewellery_Items
+  usecase "Purchase Jewellery" as U_Purchase_Jewellery
+  usecase "Generate Bill" as U_Generate_Bill
+  usecase "Update Customer Purchase Record" as U_Update_Customer_Purchase_Record
+  usecase "Update Stock" as U_Update_Stock
+  usecase "View Bill Details" as U_View_Bill_Details
+  usecase "View Stock Details" as U_View_Stock_Details
+}
+A_Admin --> U_Login
+A_Admin --> U_Add_New_Customer_Details
+A_Admin --> U_Update_Customer_Details
+A_Admin --> U_Manage_Jewellery_Items
+A_Customer --> U_Purchase_Jewellery
+A_Admin --> U_Purchase_Jewellery
+A_Admin --> U_Generate_Bill
+A_Customer --> U_View_Bill_Details
+A_Admin --> U_View_Bill_Details
+A_Admin --> U_View_Stock_Details
+U_Purchase_Jewellery ..> U_Generate_Bill : <<include>>
+U_Generate_Bill ..> U_Update_Customer_Purchase_Record : <<include>>
+U_Generate_Bill ..> U_Update_Stock : <<include>>
+@enduml

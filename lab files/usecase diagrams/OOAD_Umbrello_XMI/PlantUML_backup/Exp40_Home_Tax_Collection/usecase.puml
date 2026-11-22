@@ -1,0 +1,34 @@
+@startuml
+left to right direction
+title Home Tax Collection System - Use Case Diagram
+actor "Admin" as A_Admin
+actor "Home Owner" as A_Home_Owner
+rectangle "Home Tax Collection System" {
+  usecase "Login" as U_Login
+  usecase "Manage Home and Owner Details" as U_Manage_Home_and_Owner_Details
+  usecase "Generate Home Tax" as U_Generate_Home_Tax
+  usecase "Send Tax Bill to Owner" as U_Send_Tax_Bill_to_Owner
+  usecase "View Tax Bill" as U_View_Tax_Bill
+  usecase "Pay Tax Online" as U_Pay_Tax_Online
+  usecase "Pay Tax Offline" as U_Pay_Tax_Offline
+  usecase "Update Payment Status" as U_Update_Payment_Status
+  usecase "Send Deadline Reminder" as U_Send_Deadline_Reminder
+  usecase "Intimate Deadline Crossed" as U_Intimate_Deadline_Crossed
+  usecase "Take Action on Defaulter" as U_Take_Action_on_Defaulter
+}
+A_Admin --> U_Login
+A_Home_Owner --> U_Login
+A_Admin --> U_Manage_Home_and_Owner_Details
+A_Admin --> U_Generate_Home_Tax
+A_Home_Owner --> U_View_Tax_Bill
+A_Home_Owner --> U_Pay_Tax_Online
+A_Home_Owner --> U_Pay_Tax_Offline
+A_Admin --> U_Pay_Tax_Offline
+A_Admin --> U_Send_Deadline_Reminder
+A_Admin --> U_Intimate_Deadline_Crossed
+A_Admin --> U_Take_Action_on_Defaulter
+U_Generate_Home_Tax ..> U_Send_Tax_Bill_to_Owner : <<include>>
+U_Pay_Tax_Online ..> U_Update_Payment_Status : <<include>>
+U_Pay_Tax_Offline ..> U_Update_Payment_Status : <<include>>
+U_Intimate_Deadline_Crossed ..> U_Take_Action_on_Defaulter : <<include>>
+@enduml

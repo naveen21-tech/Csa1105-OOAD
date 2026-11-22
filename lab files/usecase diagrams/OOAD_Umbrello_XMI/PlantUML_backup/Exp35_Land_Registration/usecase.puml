@@ -1,0 +1,34 @@
+@startuml
+left to right direction
+title Land Registration System - Use Case Diagram
+actor "Registrar" as A_Registrar
+actor "Citizen" as A_Citizen
+rectangle "Land Registration System" {
+  usecase "Login" as U_Login
+  usecase "Maintain Land Details" as U_Maintain_Land_Details
+  usecase "Maintain Owner Details" as U_Maintain_Owner_Details
+  usecase "Maintain Citizen Details" as U_Maintain_Citizen_Details
+  usecase "Register Land" as U_Register_Land
+  usecase "Update Land Owner Details" as U_Update_Land_Owner_Details
+  usecase "Update Citizen Details" as U_Update_Citizen_Details
+  usecase "Record Transaction Amount" as U_Record_Transaction_Amount
+  usecase "Pay Registration Tax" as U_Pay_Registration_Tax
+  usecase "Record Tax Paid" as U_Record_Tax_Paid
+  usecase "Search Land Details" as U_Search_Land_Details
+  usecase "View Own Land Details" as U_View_Own_Land_Details
+}
+A_Registrar --> U_Login
+A_Registrar --> U_Maintain_Land_Details
+A_Registrar --> U_Maintain_Owner_Details
+A_Registrar --> U_Maintain_Citizen_Details
+A_Registrar --> U_Register_Land
+A_Citizen --> U_Register_Land
+A_Citizen --> U_Pay_Registration_Tax
+A_Citizen --> U_Search_Land_Details
+A_Citizen --> U_View_Own_Land_Details
+U_Register_Land ..> U_Update_Land_Owner_Details : <<include>>
+U_Register_Land ..> U_Update_Citizen_Details : <<include>>
+U_Register_Land ..> U_Record_Transaction_Amount : <<include>>
+U_Register_Land ..> U_Pay_Registration_Tax : <<include>>
+U_Pay_Registration_Tax ..> U_Record_Tax_Paid : <<include>>
+@enduml

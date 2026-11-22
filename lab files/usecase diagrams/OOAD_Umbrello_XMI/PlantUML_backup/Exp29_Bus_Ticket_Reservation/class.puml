@@ -1,0 +1,87 @@
+@startuml
+title Bus Ticket Reservation System - Class Diagram
+skinparam classAttributeIconSize 0
+class Admin {
+  - adminId : int
+  - name : String
+  - password : String
+  + login()
+  + manageBus()
+  + manageSchedule()
+}
+class Customer {
+  - customerId : int
+  - name : String
+  - email : String
+  - phone : String
+  - password : String
+  + createLogin()
+  + login()
+  + viewAvailability()
+  + bookTicket()
+  + cancelTicket()
+}
+class Bus {
+  - busNo : String
+  - busType : String
+  - totalSeats : int
+  - status : String
+  + getStatus()
+  + updateStatus()
+}
+class Route {
+  - routeId : int
+  - source : String
+  - destination : String
+  - distance : double
+  + getRouteDetails()
+}
+class Schedule {
+  - scheduleId : int
+  - travelDate : Date
+  - departureTime : Date
+  - arrivalTime : Date
+  - status : String
+  + updateStatus()
+}
+class Seat {
+  - seatNo : String
+  - seatType : String
+  - isAvailable : boolean
+  + book()
+  + release()
+}
+class Ticket {
+  - ticketNo : String
+  - bookingDate : Date
+  - fare : double
+  - status : String
+  + book()
+  + cancel()
+}
+class Payment {
+  - paymentId : int
+  - amount : double
+  - mode : String
+  - paymentDate : Date
+  - status : String
+  + pay()
+}
+class Refund {
+  - refundId : int
+  - amount : double
+  - percentage : double
+  - hoursBeforeDeparture : String
+  - refundDate : Date
+  + calculateRefund()
+}
+Admin "1" -- "*" Bus : manages
+Schedule "*" -- "1" Bus : of
+Schedule "*" -- "1" Route : on
+Customer "1" -- "*" Ticket : books
+Ticket "*" -- "1" Schedule : for
+Ticket "1" -- "1..*" Seat : reserves
+Ticket "1" -- "1" Payment : paid by
+Ticket "1" -- "0..1" Refund : refunded by
+Bus "1" *-- "*" Seat : has
+@enduml

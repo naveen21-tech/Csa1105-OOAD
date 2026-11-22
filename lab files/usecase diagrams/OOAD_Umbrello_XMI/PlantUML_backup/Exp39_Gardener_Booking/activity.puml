@@ -1,0 +1,25 @@
+@startuml
+title Gardener Booking System - Activity Diagram
+start
+:Gardener / admin sets availability;
+:Customer logs in;
+:Select appointment date;
+:View gardener availability;
+if (Slot available?) then (yes)
+  :Select gardener and time slot;
+  :Book appointment;
+  :Central system confirms booking;
+  :Update customer record;
+  :Update gardener schedule;
+  :Send confirmation;
+else (no)
+  :Show not available message;
+  stop
+endif
+if (Cancel appointment?) then (yes)
+  :Cancel appointment;
+  :Release the slot;
+else (no)
+endif
+stop
+@enduml

@@ -1,0 +1,83 @@
+@startuml
+title Car / Bike Vehicle Booking System - Class Diagram
+skinparam classAttributeIconSize 0
+class Vehicle {
+  - vehicleId : int
+  - model : String
+  - registrationNo : String
+  - accessCode : int
+  - rentPerDay : double
+  - status : String
+  + checkAvailability()
+  + updateStatus()
+}
+class Car {
+  - seatingCapacity : int
+  - fuelType : String
+  + getDetails()
+}
+class Bike {
+  - engineCC : int
+  - hasHelmet : boolean
+  + getDetails()
+}
+class Customer {
+  - customerId : int
+  - name : String
+  - phone : String
+  - licenseNo : String
+  - email : String
+  + reserveVehicle()
+  + pickUp()
+  + returnVehicle()
+}
+class Admin {
+  - adminId : int
+  - name : String
+  - password : String
+  + login()
+  + manageVehicles()
+  + approveReservation()
+}
+class Reservation {
+  - reservationId : int
+  - reservationDate : Date
+  - pickupDate : Date
+  - dueDate : Date
+  - status : String
+  - totalRent : double
+  + approve()
+  + cancel()
+}
+class Payment {
+  - paymentId : int
+  - amount : double
+  - mode : String
+  - paymentDate : Date
+  - status : String
+  + pay()
+}
+class VehicleLog {
+  - logId : int
+  - eventType : String
+  - eventDate : Date
+  - description : String
+  + addEntry()
+}
+class Notification {
+  - notificationId : int
+  - type : String
+  - message : String
+  - sentDate : Date
+  + send()
+}
+Vehicle <|-- Car
+Vehicle <|-- Bike
+Customer "1" -- "*" Reservation : makes
+Reservation "*" -- "1" Vehicle : reserves
+Reservation "1" -- "1" Payment : paid by
+Vehicle "1" *-- "*" VehicleLog : has
+Reservation "1" -- "*" Notification : triggers
+Admin "1" -- "*" Vehicle : manages
+Admin "1" -- "*" Reservation : approves
+@enduml

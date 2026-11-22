@@ -1,0 +1,62 @@
+@startuml
+title Doctor Appointment System - Class Diagram
+skinparam classAttributeIconSize 0
+class CentralSystem {
+  - systemId : int
+  - name : String
+  + manageAvailability()
+  + confirmBooking()
+  + updateRecords()
+}
+class Patient {
+  - patientId : int
+  - name : String
+  - phone : String
+  - email : String
+  + login()
+  + viewAvailability()
+  + bookAppointment()
+  + cancelAppointment()
+}
+class Doctor {
+  - doctorId : int
+  - name : String
+  - specialization : String
+  - phone : String
+  + setAvailability()
+  + viewAppointments()
+}
+class Availability {
+  - availabilityId : int
+  - date : Date
+  - startTime : Date
+  - endTime : Date
+  - isBooked : boolean
+  + isAvailable()
+  + markBooked()
+}
+class Appointment {
+  - appointmentId : int
+  - appointmentDate : Date
+  - appointmentTime : Date
+  - status : String
+  - remarks : String
+  + book()
+  + confirm()
+  + cancel()
+}
+class Service {
+  - serviceId : int
+  - name : String
+  - duration : int
+  - fee : double
+  + getDetails()
+}
+CentralSystem "1" -- "*" Doctor : manages
+CentralSystem "1" -- "*" Appointment : confirms
+Patient "1" -- "*" Appointment : books
+Doctor "1" -- "*" Appointment : attends
+Doctor "1" *-- "*" Availability : has
+Appointment "0..1" -- "1" Availability : uses slot
+Appointment "*" -- "1" Service : for
+@enduml
